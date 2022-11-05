@@ -1,38 +1,26 @@
-.App {
+.titulo{
+  animation-name: movi;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  font-family: "titulo";
+  font-weight: 100;
+  font-size: 100px;
+  color: rgb(73, 36, 36);
+  text-decoration:underline;
+  background-color: rgb(227, 192, 192);
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes movi {
+  0%{
+      transform: translate(0px, 0px);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  25%{
+      transform:translate(50px, 0px);
   }
-  to {
-    transform: rotate(360deg);
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 1;
   }
 }
