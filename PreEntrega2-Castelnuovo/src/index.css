@@ -1,0 +1,71 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.nav{
+  font-family: "titulo";
+  
+  font-weight: 50;
+  font-size: 25px;
+  color: rgb(73, 36, 36);
+  background-color: rgb(227, 192, 192);
+  text-align: center;
+}
+
+.Titulo{
+  animation-name: movi;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  font-family: "titulo";
+  font-weight: 100;
+  font-size: 100px;
+  color: rgb(73, 36, 36);
+  text-decoration:underline;
+  background-color: rgb(227, 192, 192);
+  text-align: center;
+  }
+  @keyframes movi {
+    0%{
+        transform: translate(0px, 0px);
+    }
+    25%{
+        transform:translate(50px, 0px);
+    }
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+  
+}
+
+.card{
+  margin-top: 10px;
+  background-color:rgb(211, 159, 159);
+}
+
+
+.Footer{
+  background-color: rgb(236, 216, 216);
+  padding: 5px 5px;
+  font-size:12px;
+  line-height:24px;
+  color:rgb(187, 86, 86);
+  }
+  .site-footer a
+  {
+  color:rgb(164, 76, 76);
+  }
+  .site-footer a:hover
+  {
+  color:rgb(91, 1, 1);
+  text-decoration:none;
+  }
+  .copyright-text{
+  margin:0
+  }
+  @media (max-width:991px){
+  .site-footer [class^=col-] {margin-bottom:30px}
+}

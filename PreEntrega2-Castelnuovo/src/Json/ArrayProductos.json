@@ -1,0 +1,54 @@
+[
+    {
+        
+        "id": 1,
+        "nombre": "Apple Watch Series 6",
+        "precio": 9000,
+        "imagen": "/imagenes/Apple Watch Series 6-min.jpg",
+        "categoria": "Apple",
+        "stock": 1
+    },
+
+    {
+        "id": 2,
+        "nombre": "Samsung Gear S3 Frontier",
+        "precio": 15000,
+        "imagen": "/imagenes/Samsung Gear S3 Frontier-min.jpg",
+        "categoria": "Samsung",
+        "stock": 2
+    },
+    {   
+        "id": 3,
+        "nombre": "Huawei Watch GT 2",
+        "precio": 10000,
+        "imagen": "/imagenes/Huawei Watch GT 2-min.jpg",
+        "categoria": "Huawei",
+        "stock": 3
+    },
+   
+    {   
+        "id": 4,
+        "nombre": "Xiaomi Mi Watch Lite",
+        "precio": 7000,
+        "imagen": "/imagenes/Xiaomi Mi Watch Lite-min.jpg",
+        "categoria":"Xiaomi",
+        "stock": 5
+    },
+
+    {   
+        "id": 5,
+        "nombre": "Suunto 9",
+        "precio": 26000,
+        "imagen": "/imagenes/Suunto 9-min.jpg",
+        "categoria": "Suunto",
+        "stock": 6
+    },
+    {   
+        "id": 6,
+        "nombre": "Samsung Gear Sport",
+        "precio": 55000,
+        "imagen": "/imagenes/Samsung Gear Sport-min.jpg",
+        "categoria":"Samsung",
+        "stock": 3
+    }
+]
