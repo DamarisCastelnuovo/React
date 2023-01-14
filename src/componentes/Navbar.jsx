@@ -1,140 +1,46 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-//import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-//import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import CartWidget from './CartWidget';
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
 
 
-const pages = ['Inicio', 'Informacion', 'Contacto'];
-
-
-export default function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  return (
-    <AppBar position="static" >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-        <AdbIcon href="" sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }} 
-        />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: '',
-              textDecoration: 'none',
-             
-            }}
-          >
-            JOYERIA CD
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none',  },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                 <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'rgb(227, 192, 192)',
-              textDecoration: 'none',
-              
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'rgb(227, 192, 192)', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}><CartWidget/></Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-    
-  );
+const NavBar = () =>{
+    return(
+        <div className="nav">
+            <div className="row">
+                <div className="col-md-6">
+                    <nav className="navbar navbar-expand-lg">
+                        <div className="container-fluid">
+                            <Link className="navbar-brand" to="/"><img src={"imagenes/icono.webp"} alt={"logo joyeria"} width={80} /></Link>
+                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                            </button>
+                            <div className="collapse navbar-collapse" id="navbarNav">
+                                <ul className="navbar-nav">
+                                    <li className="nav-item">
+                                    <NavLink className="nav-link" aria-current="page" to={"/category/Samsung"}>Samsung</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                    <NavLink className="nav-link" to={"/category/Apple"}>Apple</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                    <NavLink className="nav-link" to={"/category/Xiaomi"}>Xiaomi</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                    <NavLink className="nav-link" to={"/category/Suunto"}>Suunto</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                    <NavLink className="nav-link" to={"/category/Huawei"}>Huawei</NavLink>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div className="col-md-6 d-flex justify-content-end align-items-center">
+                    <CartWidget/>
+                </div>
+            </div>
+        </div>
+    )
 }
-
+export default NavBar;
